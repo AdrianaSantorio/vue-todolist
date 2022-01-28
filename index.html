@@ -15,7 +15,9 @@
         <h1 class="text-center">TO DO LIST</h1>
         <div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item" v-for="task in tasks">An item</li>
+                <li class="list-group-item" v-for="(task,index) in tasks">
+                    <span>{{task.text}}</span>
+                </li>
               </ul>
         </div>
     </div>
