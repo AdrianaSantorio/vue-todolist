@@ -20,7 +20,7 @@ Bonus:
 
 aggiungere la x in html
 creare un metodo che elimini il task dagli array
-agganciarlo al click all tax della x
+agganciarlo al click al tag della x
 */
 
 
@@ -37,6 +37,16 @@ const root = new Vue ({
         taskIsDoneToggle(index) {
             this.tasks[index].done = !this.tasks[index].done;
         },
+        removeTask(index) {
+            //crea un nuovo array di task che contiene tutti i task tranne quello selezionato
+           this.tasks = this.tasks.filter((task,i) => {
+               if (i === index) {
+                return false;
+               }
+               return true;
+            });
+        }, 
+
     }
     
 

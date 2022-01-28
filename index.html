@@ -19,7 +19,7 @@
                    <div @click="taskIsDoneToggle(index)">
                     <span :class="{done : task.done}">{{task.text}}</span>
                    </div>
-                   <button type="button" class="btn-close"></button>
+                   <button type="button" class="btn-close" @click="removeTask(index)"></button>
                 </li>
               </ul>
         </div>
