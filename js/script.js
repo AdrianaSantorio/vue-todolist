@@ -29,7 +29,7 @@ aggiungere l' oggetto all' array tasks tramite una funzione
 const root = new Vue ({
     el: '#root',
     data: {
-        newTask: {},
+        newTask: '',
         tasks: [
             {text: 'Scrivere una lista', done: false,},
             {text: 'scrivere una bozza di html', done: false,},
@@ -49,9 +49,12 @@ const root = new Vue ({
                return true;
             });
         },
-        addTask() {  
-            this.tasks.push(this.newTask);
-            this.newTask.text='';
+        addTask () {
+            const newTask = {};
+            newTask.text = this.newTask;
+            newTask.done = false;
+            this.tasks.push(newTask);
+            this.newTask= '';
         }
     } 
     
