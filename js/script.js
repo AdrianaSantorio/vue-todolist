@@ -18,9 +18,9 @@ Bonus:
 1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
 2- cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
 
-aggiungere la x in html
-creare un metodo che elimini il task dagli array
-agganciarlo al click al tag della x
+aggiungere un campo testuale in html
+raccogliere il testo e creare un nuovo oggetto
+aggiungere l' oggetto all' array tasks tramite una funzione
 */
 
 
