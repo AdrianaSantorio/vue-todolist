@@ -14,7 +14,7 @@
     <div id="root">
         <h1 class="text-center">TO DO LIST</h1>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="da fare..." v-model="newTask" >
+            <input type="text" class="form-control" placeholder="da fare..." v-model="newTask" @keyup.enter="addTask">
             <button class="btn btn-outline-secondary" type="button" id="button-addon2" @click="addTask">Aggiungi</button>
         </div>
         <div>
