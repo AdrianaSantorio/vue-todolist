@@ -51,9 +51,11 @@ const root = new Vue ({
         },
         addTask () {
             const newTask = {};
-            newTask.text = this.newTask;
+            newTask.text = this.newTask.trim();
             newTask.done = false;
-            this.tasks.push(newTask);
+            if (newTask.text) {
+                this.tasks.push(newTask);
+            }
             this.newTask= '';
         }
     } 
