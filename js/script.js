@@ -21,6 +21,8 @@ Bonus:
 creare una funzione che se done è true, visualizzare il testo del todo sbarrato.
 creare una classe :done
 attribuire la classe done solo se done è true
+creare una funzione che cambi lo stato di done
+agganciarla al tag relativo
 */
 
 
@@ -34,7 +36,9 @@ const root = new Vue ({
         ],
     }, 
     methods: {
-
+        taskIsDoneToggle(index) {
+            this.tasks[index].done = !this.tasks[index].done;
+        },
     }
     
 

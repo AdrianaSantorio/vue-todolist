@@ -16,7 +16,9 @@
         <div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item" v-for="(task,index) in tasks" >
+                   <div @click="taskIsDoneToggle(index)">
                     <span :class="{done : task.done}">{{task.text}}</span>
+                   </div>
                 </li>
               </ul>
         </div>
