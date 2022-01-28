@@ -20,6 +20,8 @@ Bonus:
 
 aggiungere un campo testuale in html
 raccogliere il testo e creare un nuovo oggetto
+creare un nuovo oggetto in data new task
+collegarlo al valore dell' input
 aggiungere l' oggetto all' array tasks tramite una funzione
 */
 
@@ -27,6 +29,7 @@ aggiungere l' oggetto all' array tasks tramite una funzione
 const root = new Vue ({
     el: '#root',
     data: {
+        newTask: {},
         tasks: [
             {text: 'Scrivere una lista', done: false,},
             {text: 'scrivere una bozza di html', done: false,},
@@ -45,9 +48,12 @@ const root = new Vue ({
                }
                return true;
             });
-        }, 
-
-    }
+        },
+        addTask() {  
+            this.tasks.push(this.newTask);
+            this.newTask.text='';
+        }
+    } 
     
 
 });
