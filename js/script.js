@@ -17,12 +17,6 @@ Predisporre un campo di input testuale e un pulsante "aggiungi": cliccando sul p
 Bonus:
 1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
 2- cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
-
-aggiungere un campo testuale in html
-raccogliere il testo e creare un nuovo oggetto
-creare un nuovo oggetto in data new task
-collegarlo al valore dell' input
-aggiungere l' oggetto all' array tasks tramite una funzione
 */
 
 
@@ -31,14 +25,22 @@ const root = new Vue ({
     data: {
         newTask: '',
         tasks: [
-            {text: 'Scrivere una lista', done: false,},
-            {text: 'scrivere una bozza di html', done: false,},
-            {text: 'renderizzare la lista nel dom', done: false,},
+            {text: "The handmaid's tale", done: false,},
+            {text: "This is how you lose the time war", done: false,},
+            {text: "Beloved", done: false,},
+            {text: "The Silmarillion", done: false,},
         ],
     }, 
     methods: {
         taskIsDoneToggle(index) {
             this.tasks[index].done = !this.tasks[index].done;
+                //funzione esterna?
+                this.tasks.map((task, index) => {
+                    if (this.tasks[index].done === true) {
+                        this.tasks.splice(index, 1);
+                        this.tasks.push(task);
+                    }
+                });
         },
         removeTask(index) {
             //crea un nuovo array di task che contiene tutti i task tranne quello selezionato
@@ -59,6 +61,4 @@ const root = new Vue ({
             this.newTask= '';
         }
     } 
-    
-
 });
