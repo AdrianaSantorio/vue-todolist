@@ -59,6 +59,12 @@ const root = new Vue ({
                 this.tasks.push(newTask);
             }
             this.newTask= '';
-        }
+        },
+        deleteAll() {
+            this.tasks = [];
+        },
     } 
 });
+
+
+//randomizzare i suggerimenti?

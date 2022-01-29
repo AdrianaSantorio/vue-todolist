@@ -12,22 +12,29 @@
 </head>
 <body>
     <div id="root">
-        <h1 class="text-center">READING LIST</h1>
+        <h1 class="text-center">Reading List</h1>
         <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Cosa vuoi leggere?" v-model="newTask" @keyup.enter="addTask">
             <button class="btn btn-outline-secondary" type="button" id="button-addon2" @click="addTask">Aggiungi</button>
         </div>
         <div>
-            <ul class="list-group list-group-flush" v-if="tasks.length">
-                <li class="list-group-item d-flex justify-content-between" v-for="(task,index) in tasks" >
-                   <div class="flex-grow-1" @click="taskIsDoneToggle(index)">
-                    <i class="fas" :class="task.done ? 'fa-book' : 'fa-bookmark'"></i>
-                    <span :class="{done : task.done}">{{task.text}}</span>
-                   </div>
-                   <button type="button" class="btn-close" @click="removeTask(index)"></button>
-                </li>
-            </ul>
-            <h3 v-else>Non c'è nulla nella tua reading list, qualche suggerimento?</h3>    
+            <div v-if="tasks.length">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between" v-for="(task,index) in tasks" >
+                       <div class="flex-grow-1" @click="taskIsDoneToggle(index)">
+                        <i class="fas" :class="task.done ? 'fa-book' : 'fa-bookmark'"></i>
+                        <span :class="{done : task.done}">{{task.text}}</span>
+                       </div>
+                       <button type="button" class="btn-close" @click="removeTask(index)"></button>
+                    </li>
+                </ul>
+                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                    <button type="button" class="btn btn-outline-primary">Ho completato la reading list!</button>
+                    <button type="button" class="btn btn-outline-primary">Segna tutti come da leggere</button>
+                    <button type="button" class="btn btn-outline-primary" @click="deleteAll">Cancella tutto</button>
+                </div>
+            </div>
+            <h3 v-else>Non c'è nulla nella tua reading list, qualche <a href="https://www.barnesandnoble.com/b/books/science-fiction-fantasy/_/N-29Z8q8Z180l" class="text-decoration-none text-reset">suggerimento?</a></h3>    
         </div>
     </div>
     <!-- script -->
