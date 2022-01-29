@@ -29,8 +29,8 @@
                     </li>
                 </ul>
                 <div class="btn-group" role="group" aria-label="Basic outlined example">
-                    <button type="button" class="btn btn-outline-primary">Ho completato la reading list!</button>
-                    <button type="button" class="btn btn-outline-primary">Segna tutti come da leggere</button>
+                    <button type="button" class="btn btn-outline-primary" @click="markAllAs(true)">Ho completato la reading list!</button>
+                    <button type="button" class="btn btn-outline-primary" @click="markAllAs(false)">Segna tutti come da leggere</button>
                     <button type="button" class="btn btn-outline-primary" @click="deleteAll">Cancella tutto</button>
                 </div>
             </div>

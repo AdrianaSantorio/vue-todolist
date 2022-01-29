@@ -63,6 +63,11 @@ const root = new Vue ({
         deleteAll() {
             this.tasks = [];
         },
+        markAllAs(isDone) {
+            this.tasks.map((task) => {
+                task.done = isDone;
+            });
+        }
     } 
 });
 
